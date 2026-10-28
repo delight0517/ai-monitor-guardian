@@ -1,0 +1,19 @@
+{
+  "api_version": 1,
+  "integration_scope": "integration",
+  "features": [
+    {"id": "display-policy", "files": ["ai_debug_display/modules/display_policy.py", "ai_debug_display/policy.py", "ai_debug_display/policy_contracts.py"]},
+    {"id": "session-lifecycle", "files": ["ai_debug_display/models.py", "ai_debug_display/service.py", "ai_debug_display/activity_lease.py", "tests/test_display_session.py", "tests/test_activity_lease.py"]},
+    {"id": "private-desktop", "files": ["ai_debug_display/private_desktop.py", "tests/test_private_desktop_native.py"]},
+    {"id": "display-recovery", "files": ["ai_debug_display/reconnect_recovery.py", "ai_debug_display/placement_journal.py", "tests/test_reconnect_native.py", "tests/test_reconnect_recovery.py", "tests/test_recovery_safety.py", "tests/private_recovery_window_fixture.py"]},
+    {"id": "guest-lifecycle", "files": ["ai_debug_display/guest_session.py", "tests/test_guest_session.py"]},
+    {"id": "broker-protocol", "files": ["ai_debug_display/broker_protocol.py", "tests/test_broker_protocol.py", "BROKER_SECURITY_DESIGN.md"]},
+    {"id": "broker-transport", "files": ["ai_debug_display/broker_server.py", "tests/test_broker_server.py"]},
+    {"id": "driver-sample-comparison", "files": ["drivers/ai_debug_idd/**"]},
+    {"id": "native-driver", "files": ["drivers/ai_debug_mttvdd/**", "scripts/stage_mttvdd_fork_source.py", "tests/test_mttvdd_fork_seed.py", "tests/test_stage_mttvdd_fork_source.py", "DRIVER_DESIGN.md"]},
+    {"id": "guest-setup", "files": ["GUEST_OS_INSTALL_PLAN.md", "scripts/create_isolated_hyperv_guest.ps1", "scripts/enable_hyperv_no_restart.ps1", "scripts/read_only_guest_prerequisites.ps1", "scripts/verify_and_attach_guest_iso.ps1", "tests/test_guest_iso_staging.py", "scripts/stage_guest_driver_source.py", "tests/test_stage_guest_driver_source.py"]},
+    {"id": "module-host", "files": ["ai_debug_display/evolution.py", "tests/test_evolution_module_host.py"]},
+    {"id": "feature-claims", "files": ["ai_debug_display/feature_claims.py", "tests/test_feature_claims.py", "scripts/hold_feature_claim.py"]},
+    {"id": "integration", "files": ["ai_debug_display/__init__.py", "ai_debug_display/modules/__init__.py", "scripts/__init__.py", "module-manifest.json", "feature-ownership.json", "MODULE_CONTRACT.md", "MODULE_MAP.md", "README.md", "TODO.md", "AGENTS.md", ".gitignore", ".gitattributes", "pyproject.toml", ".github/workflows/tests.yml", "PUBLIC_README.md", "PUBLIC_MODULE_MAP.md", "PUBLIC_MODULE_CONTRACT.md", "PUBLIC_BROKER_SECURITY_DESIGN.md", "PUBLIC_DRIVER_DESIGN.md", "CONTRIBUTING_PUBLIC.md", "AI_DISPLAY_ISOLATION_ENGINEER.md", "research/**", "evidence/**", "qa_artifacts/**"]}
+  ]
+}

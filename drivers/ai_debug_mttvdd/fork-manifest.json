@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "forkVersion": "0.1.1-seed",
+  "upstream": "https://github.com/VirtualDrivers/Virtual-Display-Driver",
+  "upstreamCommit": "d7244969b2aa8bb38e76d79505eda217996cefea",
+  "license": "MIT",
+  "hardwareId": "Root\\AiDebugGuestDisplay",
+  "installScope": "disposable-windows-guest-only",
+  "stage": "fail-closed-not-built-not-for-install",
+  "leaseImplemented": false,
+  "defaultMonitorDisabled": true,
+  "controlPipeRestricted": false,
+  "controlPipeEnabledByDefault": false,
+  "buildVerified": false,
+  "installedInGuest": false,
+  "hostInstallAllowed": false,
+  "files": {
+    "Common/Include/AdapterOption.h": "ee1df521f7a4a978226278cc9f594c2db48edc4c7cc6e5dc1f6af1f97bdf998c",
+    "Common/Include/README.md": "f533668c83a3a8d49f4a3fceb61200864fda6230394aaa8d5b1251cf2d9705c2",
+    "LICENSE": "18410203392d42d8dac0ac33a727d04696bb6ffbff8493975466fa8aedc2cb27",
+    "MttVDD/AiDebugGuestDisplay.inf": "55b761b9ef1812a352f01baab48467e9133467d6ee29338f5aedb6d4e914ecc7",
+    "MttVDD/AiDebugGuestDisplay.vcxproj": "fc4f552e9c7d405ab29cbb1991de55346e66c245e7a5ae70db0e5957fc2b7e93",
+    "MttVDD/AiDebugGuestDisplay.vcxproj.filters": "7a2adb4bf41a84b66b6e53e7eb3b0a2952b2aa6f279100ed125f6b5ddf75cd8d",
+    "MttVDD/Driver.cpp": "ff5fa377ed41c60d0703fc6c73273ee8dac1a83a0eb1b5f03a7b223f1aef9e40",
+    "MttVDD/Driver.h": "d097aa627689abb444df0fe504ea6b21783ad80fe6ce4588d5680b755336d208",
+    "MttVDD/MttVDD.sln": "cc9d9921f8969e8b5e4afc2006e4a16b5d6bad0772bef3086d79bd9b565bd3f4",
+    "MttVDD/Trace.h": "8e3319bcfe378f03fe23b8567634040e87cdd0e4b5ef4a0bc4e6e48d3e582d5f",
+    "MttVDD/readme.md": "4cc3e00bc11f7691973e5ad24f9fd28a3acb9f646eab665832cfe795303bbcd4",
+    "README.md": "78731ecb4fb760b9db2e5ace2b93e2718e85123f0d305e0626808a8e6bf73de1"
+  }
+}

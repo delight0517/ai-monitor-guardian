@@ -1,9 +1,10 @@
 __pycache__/
 *.py[cod]
-*$py.class
-*.log
+.evolution/
 .venv/
-env/
-venv/
-.idea/
-.vscode/
+build/
+dist/
+*.egg-info/
+evidence/
+qa_artifacts/
+.pytest_cache/
