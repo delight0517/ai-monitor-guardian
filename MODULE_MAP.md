@@ -6,7 +6,7 @@ Package `ai_debug_display` version 0.7.0, API 1.
 |---|---|---|---|
 | Display policy | `modules/display_policy.py`, policy facade and contracts | Module host can reload policy only while no session or policy call is active | Local policy tests; no host display adapter is enabled |
 | Session lifecycle | `models.py`, `service.py`, activity lease | End the exact session before replacing core imports | Fake adapter tests |
-| Private desktop | `private_desktop.py` | Close the owned process/job/desktop before replacement | Windows disposable-process tests; focus isolation only |
+| Private desktop | `private_desktop.py` | Close the owned process/job/desktop before replacement | Windows tests verify owned-HWND readiness, synthetic in-memory capture and cleanup; focus isolation only, app-specific capture unverified |
 | Reconnect recovery | `reconnect_recovery.py`, `placement_journal.py` | Persist validated state, wait for callbacks to finish, discard old plans | Policy/persistence tests; no general watcher or hardware cycle |
 | Guest lifecycle | `guest_session.py` | Stop the lease and backend before replacement | Fake backend tests; no production Hyper-V backend |
 | Broker protocol and transport | `broker_protocol.py`, `broker_server.py` | Roll out broker/client versions together; fixed named pipe, protected DACL, remote rejection, user/logon SID verification, bounded overlapped connect/read/write | Local Windows fake-handler tests, including stalled-client timeout and stop cancellation; no installed service or production backend |

@@ -7,7 +7,7 @@ The safe direction is to keep AI UI work inside a disposable, private environmen
 ## What is in this source release
 
 - Versioned display-session and output-policy contracts with fail-closed behavior.
-- A private Win32 desktop/process-job helper. It isolates focus; it is **not** a security boundary for files, network access, credentials, or account data.
+- A private Win32 desktop/process-job helper with owned-window verification and an in-memory capture API for a verified HWND. It isolates focus; it is **not** a security boundary for files, network access, credentials, or account data. Synthetic GDI window capture is tested; compatibility with real applications is not implied.
 - Reconnect placement journaling and policy helpers. They do not run a global watcher or move arbitrary windows.
 - A fake-backend Hyper-V guest lifecycle contract with idle expiry and graceful-stop ordering.
 - A local Windows named-pipe transport with bounded connect/read/write deadlines, fixed `status`, `acquire`, `heartbeat`, and `release` actions, and user/logon SID checks before an injected handler is called.
@@ -16,7 +16,7 @@ The safe direction is to keep AI UI work inside a disposable, private environmen
 
 ## Current runtime status
 
-The manager package is at **0.7.0**. The test suite exercises policy and lifecycle code with synthetic inputs and fake backends; selected tests create and close a disposable private desktop process and exercise a real local named pipe on Windows, including stalled-client timeout and stop cancellation during connect/read. There is no installed manager service, production guest backend, bootable guest image, guest driver installation, or live app-to-screen session in this release. The named-pipe tests use a fake handler and do not start Hyper-V. The injected handler itself is synchronous and is not protected by the transport deadlines; a production handler must enforce its own bounded operations.
+The manager package is at **0.7.0**. The test suite exercises policy and lifecycle code with synthetic inputs and fake backends; selected tests create and close a disposable private desktop process, verify and capture a synthetic owned GDI window in memory, and exercise a real local named pipe on Windows, including stalled-client timeout and stop cancellation during connect/read. There is no installed manager service, production guest backend, bootable guest image, guest driver installation, or live app-to-screen session in this release. The named-pipe tests use a fake handler and do not start Hyper-V. The injected handler itself is synchronous and is not protected by the transport deadlines; a production handler must enforce its own bounded operations.
 
 Consumer application source and user data are maintained separately and are not included here. The protocol contract is documented for integration; no consumer package is installed or connected to a running application.
 
