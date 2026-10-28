@@ -1,0 +1,22 @@
+{
+  "api_version": 1,
+  "watch_allowlist": [],
+  "modules": [
+    {
+      "id": "display-policy",
+      "path": "modules/display_policy.py",
+      "version": "1.0.0",
+      "api_version": 1,
+      "dependencies": [],
+      "reloadable": true,
+      "restart_required": false,
+      "auto_watch": false,
+      "lifecycle": {
+        "initialize": "initialize",
+        "dispose": "dispose",
+        "snapshot_state": "snapshot_state",
+        "restore_state": "restore_state"
+      }
+    }
+  ]
+}
