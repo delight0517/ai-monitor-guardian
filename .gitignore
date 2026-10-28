@@ -5,3 +5,6 @@ __pycache__/
 build/
 dist/
 *.egg-info/
+evidence/
+qa_artifacts/
+.pytest_cache/

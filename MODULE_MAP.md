@@ -9,7 +9,7 @@ Package `ai_debug_display` version 0.7.0, API 1.
 | Private desktop | `private_desktop.py` | Close the owned process/job/desktop before replacement | Windows disposable-process tests; focus isolation only |
 | Reconnect recovery | `reconnect_recovery.py`, `placement_journal.py` | Persist validated state, wait for callbacks to finish, discard old plans | Policy/persistence tests; no general watcher or hardware cycle |
 | Guest lifecycle | `guest_session.py` | Stop the lease and backend before replacement | Fake backend tests; no production Hyper-V backend |
-| Broker protocol | `broker_protocol.py` | Roll out broker/client versions together | Parser and synthetic interop tests; no server/authentication |
+| Broker protocol and transport | `broker_protocol.py`, `broker_server.py` | Roll out broker/client versions together; fixed named pipe, protected DACL, remote rejection, user/logon SID verification, bounded overlapped connect/read/write | Local Windows fake-handler tests, including stalled-client timeout and stop cancellation; no installed service or production backend |
 | Evolution host | `evolution.py`, `module-manifest.json` | Candidate hash, API, version and state guards; one module per apply | In-process module host tests; no installed service |
 | Feature claims | `feature_claims.py`, `feature-ownership.json`, `scripts/hold_feature_claim.py` | One writer per feature; exclusive integration claim | Cross-process coordination tests; cooperating writers only |
 | Driver samples | `drivers/` | Build/sign/install only in a disposable guest after review | Source-only; unbuilt and unvalidated |
@@ -22,4 +22,4 @@ The Python package is the source library. There is no always-running UI or servi
 
 ## Runtime status
 
-The package does not activate a host-attached virtual display, own a production VM, provide an authenticated broker, capture guest frames, or guarantee user-window recovery. A host VDD can become an ordinary Windows display and can affect the user's display topology. The default host adapter is inert.
+The package does not activate a host-attached virtual display, own a production VM, install a broker service, call a production backend, capture guest frames, or guarantee user-window recovery. The named pipe identifies a user/logon session rather than a particular executable. A host VDD can become an ordinary Windows display and can affect the user's display topology. The default host adapter is inert.

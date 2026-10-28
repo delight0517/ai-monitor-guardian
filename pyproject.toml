@@ -18,5 +18,8 @@ classifiers = [
   "Programming Language :: Python :: 3.12",
 ]
 
+[project.optional-dependencies]
+windows-broker = ["pywin32>=306; platform_system == 'Windows'"]
+
 [tool.setuptools]
 packages = ["ai_debug_display", "ai_debug_display.modules"]
